@@ -1,0 +1,246 @@
+.product {
+
+  &__list {
+    width: 320px;
+    margin: 0 auto;
+
+    @media (min-width: @tablet-width) {
+      width: 768px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+    }
+
+    @media (min-width: @desctop-width) {
+      width: 1280px;
+    }
+  }
+
+  &__item {
+    width: 320px;
+    margin-bottom: 80px;
+    display: grid;
+    grid-template-rows: 44px 436px min-content;
+
+    @media (min-width: @tablet-width) {
+      margin-left: 80px;
+    }
+
+    &:nth-child(odd) {
+      margin-left: 0;
+
+      @media (min-width:@desctop-width) {
+        margin-left: 80px;
+      }
+    }
+
+    &:nth-child(3n+1) {
+      @media (min-width: @desctop-width) {
+        margin-left: 0;
+      }
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    position: relative;
+    text-decoration: none;
+    color: @color-blue;
+  }
+
+  &__link::after {
+    content: '';
+    position: absolute;
+    width: 85%;
+    left: 0;
+    bottom: 0;
+    border-bottom: 1px dashed @color-blue;
+  }
+
+  &__footer-text {
+    display: block;
+
+    &--selected {
+      display: none;
+    }
+  }
+
+  &__footer-info {
+    display: none;
+
+    &--selected {
+      display: block;
+    }
+  }
+
+  /* Сетка карточки товара */
+  &__header {
+    display: grid;
+    grid-template-columns: 44px 1fr;
+    font-size: 16px;
+    line-height: 19px;
+  }
+
+  &__decor {
+    width: 44px;
+    height: 44px;
+    background-image: linear-gradient(135deg, rgba(@color-white-rgb, 0) 50%, @color-silver-light 50%);
+  }
+
+  &__decor-line {
+    stroke: @color-blue;
+    stroke-width: 5;
+
+    &--selected {
+      stroke: @color-red;
+    }
+
+    &--disabled {
+      stroke: rgba(@color-silver-rgb, .5)
+    }
+  }
+
+  &__label {
+    background-color: @color-silver-light;
+    border-radius: 0 12px 0 0;
+
+    &-default {
+      padding-top: 21px;
+      padding-left: 11px;
+      display: block;
+      border: 4px solid @color-blue;
+      border-left: none;
+      border-bottom: none;
+      border-radius: 0 12px 0 0;
+    }
+
+    &--selected {
+      padding-top: 21px;
+      padding-left: 11px;
+      border: 4px solid @color-red;
+      border-left: none;
+      border-bottom: none;
+      border-radius: 0 12px 0 0;
+    }
+
+    &-hover {
+      display: block;
+      color: @color-red;
+    }
+
+    &--close {
+      display: none;
+    }
+
+    &--disabled {
+      border: 4px solid @color-silver;
+      border-left: none;
+      border-bottom: none;
+      border-radius: 0 12px 0 0;
+      opacity: .5;
+    }
+  }
+
+  &__content {
+    min-height: 436px;
+    padding: 0 16px 16px 48px;
+    display: grid;
+    grid-template-rows: min-content min-content min-content 1fr;
+    background-color: @color-silver-light;
+    background-image: url(/img/cat.png);
+    background-repeat: no-repeat;
+    background-position: -30px 160px;
+    border: 4px solid @color-blue;
+    border-top: none;
+    border-radius: 0 0 12px 12px;
+
+    &--selected {
+      border-color: @color-red;
+    }
+
+    &--disabled {
+      border-color: rgba(@color-silver-rgb, .5);
+      background-image: url(/img/cat2.png);
+    }
+  }
+
+  &__info {
+    &--disabled {
+      color: @color-silver;
+      opacity: .5;
+    }
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: center;
+    padding-top: 14px;
+    font-size: 13px;
+    line-height: 15px;
+    color: @color-white;
+  }
+
+  &__footer-hide {
+    color: @color-yellow;
+  }
+
+  &__footer--close {
+    display: none;
+  }
+
+  /* Содержание товара */
+  &__title {
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 56px;
+    color: @color-black;
+
+    &--disabled {
+      color: @color-silver;
+      opacity: .5;
+    }
+  }
+
+  &__taste {
+    margin-bottom: 15px;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 28px;
+    color: @color-black;
+
+    &--disabled {
+      color: @color-silver;
+      opacity: .5;
+    }
+  }
+
+  &__weigth {
+    width: 80px;
+    height: 80px;
+    padding-top: 10px;
+    justify-self: end;
+    align-self: end;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 42px;
+    line-height: 22px;
+    color: @color-white;
+    background-color: @color-blue;
+    border-radius: 50%;
+
+    &--selected {
+      background-color: @color-red;
+    }
+
+    &--disabled {
+      background-color: @color-silver;
+    }
+  }
+
+  &__weight-unit {
+    font-size: 21px;
+  }
+}

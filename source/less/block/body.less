@@ -1,0 +1,19 @@
+.page-body {
+  min-height: 100vh;
+  margin: 0;
+  font-family: 'Trebuchet MS', serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  color: @color-gray;
+  background-color: @color-black;
+  background:linear-gradient(to bottom,rgba(@color-black-rgb, .5), rgba(@color-black-rgb, 0), rgba(@color-black-rgb, .5)), url('/img/pattern.png');
+  background-attachment: fixed;
+
+  @media (min-width: @tablet-width) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
